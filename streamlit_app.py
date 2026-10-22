@@ -8,5 +8,4 @@ st.write(
 qrcode = st.file_uploader("QRコード",type="image/*")
 
 if qrcode is not None:
-    for item in qrcode:
-        st.image(qrcode,width=50)
+    st.image(qrcode,width=50)
