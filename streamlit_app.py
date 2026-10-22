@@ -1,4 +1,7 @@
 import streamlit as st
+import cv2
+
+qcd = cv2.QRCodeDetector()
 
 st.title("Web QRコードリーダー")
 st.write(
@@ -8,4 +11,6 @@ st.write(
 qrcode = st.file_uploader("QRコード",type="image/*")
 
 if qrcode is not None:
-    st.image(qrcode,width=50)
+    st.image(qrcode,width=200)
+    retval, decoded_info, points, straight_qrcode = qcd.detectAndDecodeMulti(qrcode)
+    st.write(decoded_info)
