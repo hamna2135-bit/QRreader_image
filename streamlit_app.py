@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("画像読み取り式QRコードリーダー")
+st.title("Web QRコードリーダー")
 st.write(
     "ここに文章を入力"
 )
@@ -8,4 +8,5 @@ st.write(
 qrcode = st.file_uploader("QRコード",type="image/*")
 
 if qrcode is not None:
-    st.image(qrcode)
+    for item in qrcode:
+        st.image(qrcode,width=50)
