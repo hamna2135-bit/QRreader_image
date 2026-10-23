@@ -1,5 +1,6 @@
 import streamlit as st
 import cv2
+from PIL import Image
 
 qcd = cv2.QRCodeDetector()
 
@@ -12,7 +13,6 @@ qrcode = st.file_uploader("QRコード",type="image/*")
 
 if qrcode is not None:
     st.image(qrcode)
-    item = cv2.imread(qrcode.name)
-    st.write(type(item))
+    item = Image.open(qrcode)
     retval, decoded_info, points, straight_qrcode = qcd.detectAndDecodeMulti(item)
     st.write(decoded_info)
