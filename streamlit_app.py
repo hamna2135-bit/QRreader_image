@@ -29,3 +29,4 @@ if qrcode is not None:
             st.code("内容を読み取れませんでした",language=None)
         else:
             st.code(deta,language=None)
+            st.write(type(deta))
