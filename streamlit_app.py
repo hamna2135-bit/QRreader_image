@@ -11,14 +11,12 @@ st.write("ドット部分がデザインされたものではうまく読み取�
 
 qrcode = st.file_uploader("QRコード",
                           type=["jpeg",
-                                "jpg",
                                 "png",
                                 "bmp",
                                 "webp",
                                 "heic",
-                                "tiff",
-                                "gif",
-                                "apng"])
+                                "tiff"],
+                          help="対応形式：JPEG,PNG,BMP,WEBP,HEIC,TIFF")
 
 if qrcode is not None:
     st.image(qrcode)
