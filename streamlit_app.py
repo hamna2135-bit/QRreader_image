@@ -6,7 +6,9 @@ qcd = cv2.QRCodeDetector()
 
 st.title("Web QRコードリーダー")
 st.write(
-    "ここに文章を入力"
+    '''画像からQRコードを読み取ります。
+    画像内にQRコードが複数あっても読み取りできます。
+    ドット部分がデザインされたものではうまく読み取れない可能性があります。'''
 )
 
 qrcode = st.file_uploader("QRコード",type="image/*")
