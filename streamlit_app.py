@@ -14,5 +14,6 @@ if qrcode is not None:
     st.image(qrcode)
     st.write(qrcode.name)
     st.write(qrcode._file_urls)
+    st.image(qrcode._file_urls.upload_url)
     retval, decoded_info, points, straight_qrcode = qcd.detectAndDecodeMulti(qrcode)
     st.write(decoded_info)
