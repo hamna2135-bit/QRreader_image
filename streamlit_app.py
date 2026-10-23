@@ -9,7 +9,16 @@ st.write("画像からQRコードを読み取ります。")
 st.write("画像内にQRコードが複数あっても読み取りできます。")
 st.write("ドット部分がデザインされたものではうまく読み取れない可能性があります。")
 
-qrcode = st.file_uploader("QRコード",type="image/*")
+qrcode = st.file_uploader("QRコード",
+                          type=["jpeg",
+                                "jpg",
+                                "png",
+                                "bmp",
+                                "webp",
+                                "heic",
+                                "tiff",
+                                "gif",
+                                "apng"])
 
 if qrcode is not None:
     st.image(qrcode)
