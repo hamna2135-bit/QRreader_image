@@ -12,6 +12,6 @@ qrcode = st.file_uploader("QRコード",type="image/*")
 
 if qrcode is not None:
     st.image(qrcode)
-    item = cv2.imread(qrcode)
+    item = cv2.imread(qrcode.name)
     retval, decoded_info, points, straight_qrcode = qcd.detectAndDecodeMulti(item)
     st.write(decoded_info)
