@@ -5,11 +5,9 @@ import numpy as np
 qcd = cv2.QRCodeDetector()
 
 st.title("Web QRコードリーダー")
-st.write(
-    '''画像からQRコードを読み取ります。\n
-    画像内にQRコードが複数あっても読み取りできます。\n
-    ドット部分がデザインされたものではうまく読み取れない可能性があります。'''
-)
+st.write("画像からQRコードを読み取ります。")
+st.write("画像内にQRコードが複数あっても読み取りできます。")
+st.write("ドット部分がデザインされたものではうまく読み取れない可能性があります")
 
 qrcode = st.file_uploader("QRコード",type="image/*")
 
