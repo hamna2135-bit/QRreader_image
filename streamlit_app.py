@@ -24,7 +24,8 @@ if qrcode is not None:
     item = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
     retval, decoded_info, points, straight_qrcode = qcd.detectAndDecodeMulti(item)
     st.write("処理結果")
-    st.write(decoded_info)
+    if decoded_info == ():
+        st.write("QRコードがありません")
     for deta in decoded_info:
         if deta == "":
             st.code("内容を読み取れませんでした",language=None)
